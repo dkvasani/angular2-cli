@@ -11,6 +11,7 @@ import {LoginService} from "./login.service";
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterComponent } from './register/register.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { RegisterComponent } from './register/register.component';
     LoginComponent,
     AboutusComponent,
     DashboardComponent,
-    RegisterComponent
+    RegisterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

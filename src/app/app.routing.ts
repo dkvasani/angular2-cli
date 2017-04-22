@@ -1,13 +1,18 @@
-import {ModuleWithProviders} from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
+import { ModuleWithProviders } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 
-import{LoginComponent} from './login/login.component';
-import{AboutusComponent} from './aboutus/aboutus.component';
-import{DashboardComponent} from './dashboard/dashboard.component';
-import{RegisterComponent} from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { RegisterComponent } from './register/register.component';
+import { HeaderComponent } from './header/header.component';
 
-
-const appRoutes : Routes = [
+const headerComp = {
+            path: '',
+            component: HeaderComponent,
+            outlet: 'header'
+        };
+const appRoutes: Routes = [
     {
         path: '',
         component: LoginComponent
@@ -18,11 +23,13 @@ const appRoutes : Routes = [
     },
     {
         path: 'dashboard',
-        component: DashboardComponent
+        component: DashboardComponent,
+        children: [headerComp]
     },
     {
         path: 'register',
-        component: RegisterComponent
+        component: RegisterComponent,
+        children: [headerComp]
     },
 ];
 
