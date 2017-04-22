@@ -26,4 +26,18 @@ export class LoginService {
 
   }
 
+  register(formObj):Observable<any> {
+    //var body = formObj;
+    var headers = new Headers();
+    console.log(body);
+    var body = "name="+ formObj.name + "&password=" + formObj.password + "&email=" + formObj.email;
+    headers.append('Content-Type', 'application/x-www-form-urlencoded');
+    console.log("In the service");
+    return this.http
+      .post('http://localhost:1337/user/signup', body, {headers : headers})
+      .map(response => response.json()).catch(err => {
+            return Observable.throw(err);
+          });
+  }
+
 }

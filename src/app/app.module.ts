@@ -10,13 +10,15 @@ import { LoginComponent } from './login/login.component';
 import {LoginService} from "./login.service";
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     AboutusComponent,
-    DashboardComponent
+    DashboardComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

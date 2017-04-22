@@ -4,24 +4,19 @@ import { LoginService } from "../login.service";
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
-export class LoginComponent implements OnInit {
+export class RegisterComponent implements OnInit {
+
+  constructor(private loginService: LoginService, private router: Router) { }
 
   errorMsg : String = '';
-
-  constructor(private loginService: LoginService, private router: Router) {
-    var currentUserToken = localStorage.getItem('currentUserToken');
-    if (currentUserToken) {
-      this.router.navigate(['dashboard']);
-    }
-  }
   submitForm(form: any): void {
     console.log('Form Data: ');
     console.log(form);
-    this.loginService.authenticate(form).subscribe(
+    this.loginService.register(form).subscribe(
       data => {
         if (data.success) {
           var logintToken = data.token;

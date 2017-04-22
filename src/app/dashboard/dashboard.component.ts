@@ -10,7 +10,7 @@ export class DashboardComponent implements OnInit {
 
   constructor(private router: Router) {
     var currentUserToken = localStorage.getItem('currentUserToken');
-    if (currentUserToken) {
+    if (!currentUserToken) {
       this.router.navigate(['']);
     }
 
