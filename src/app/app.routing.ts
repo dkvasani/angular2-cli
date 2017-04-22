@@ -3,6 +3,7 @@ import {Routes, RouterModule} from '@angular/router';
 
 import{LoginComponent} from './login/login.component';
 import{AboutusComponent} from './aboutus/aboutus.component';
+import{DashboardComponent} from './dashboard/dashboard.component';
 
 
 const appRoutes : Routes = [
@@ -13,6 +14,10 @@ const appRoutes : Routes = [
     {
         path: 'about',
         component: AboutusComponent
+    },
+    {
+        path: 'dashboard',
+        component: DashboardComponent
     },
 ];
 

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
+import {Observable} from 'rxjs/Rx';
 
 @Injectable()
 export class LoginService {
@@ -9,7 +10,7 @@ export class LoginService {
     console.log("Post service initialized");
   }
 
-  authenticate(formObj) {
+  authenticate(formObj):Observable<any> {
     //var body = formObj;
     var headers = new Headers();
     console.log(body);
@@ -18,7 +19,10 @@ export class LoginService {
     console.log("In the service");
     return this.http
       .post('http://localhost:1337/user/login', body, {headers : headers})
-      .map(response => response.json())
+      .map(response => response.json()).catch(err => {
+
+            return Observable.throw(err);
+          });
 
   }
 
