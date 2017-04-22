@@ -15,7 +15,8 @@ const headerComp = {
 const appRoutes: Routes = [
     {
         path: '',
-        component: LoginComponent
+        component: LoginComponent,
+        children: [headerComp]
     },
     {
         path: 'about',

@@ -8,14 +8,18 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private router: Router) { 
-    var currentUserToken = localStorage.getItem('currentUserToken');
-    if (!currentUserToken) {
-      this.router.navigate(['']);
-    }
+  currentUserToken = '';
+  currentURL = '';
+  constructor(private router: Router) {
+    this.currentUserToken = localStorage.getItem('currentUserToken');
+    this.currentURL = this.router.url;
   }
 
   ngOnInit() {
+  }
+
+  logout(){
+    localStorage.removeItem('currentUserToken');
   }
 
 }
