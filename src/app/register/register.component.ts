@@ -21,6 +21,7 @@ export class RegisterComponent implements OnInit {
         if (data.success) {
           var logintToken = data.token;
           localStorage.setItem('currentUserToken', logintToken);
+          localStorage.setItem('currentUserData', JSON.stringify(data.user));
             this.router.navigate(['dashboard']);
         } else {
           this.errorMsg = data.message ? data.message : "Please try again";

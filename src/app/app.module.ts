@@ -5,13 +5,16 @@ import { HttpModule } from '@angular/http';
 
 
 import { AppComponent } from './app.component';
-import {routing} from './app.routing';
+import { routing } from './app.routing';
 import { LoginComponent } from './login/login.component';
-import {LoginService} from "./login.service";
+import { LoginService } from "./login.service";
+import { UserService } from "./user.service";
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterComponent } from './register/register.component';
 import { HeaderComponent } from './header/header.component';
+import { ProjectComponent } from './project/project.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,9 @@ import { HeaderComponent } from './header/header.component';
     AboutusComponent,
     DashboardComponent,
     RegisterComponent,
-    HeaderComponent
+    HeaderComponent,
+    ProjectComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +33,7 @@ import { HeaderComponent } from './header/header.component';
     HttpModule,
     routing
   ],
-  providers: [LoginService],
+  providers: [LoginService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

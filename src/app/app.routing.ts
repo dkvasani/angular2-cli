@@ -6,12 +6,14 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterComponent } from './register/register.component';
 import { HeaderComponent } from './header/header.component';
+import { UserComponent } from './user/user.component';
 
 const headerComp = {
             path: '',
             component: HeaderComponent,
             outlet: 'header'
         };
+        
 const appRoutes: Routes = [
     {
         path: '',
@@ -30,6 +32,11 @@ const appRoutes: Routes = [
     {
         path: 'register',
         component: RegisterComponent,
+        children: [headerComp]
+    },
+    {
+        path: 'user',
+        component: UserComponent,
         children: [headerComp]
     },
 ];

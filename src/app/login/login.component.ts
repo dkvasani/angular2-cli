@@ -10,7 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  errorMsg : String = '';
+  errorMsg: String = '';
 
   constructor(private loginService: LoginService, private router: Router) {
     var currentUserToken = localStorage.getItem('currentUserToken');
@@ -26,7 +26,8 @@ export class LoginComponent implements OnInit {
         if (data.success) {
           var logintToken = data.token;
           localStorage.setItem('currentUserToken', logintToken);
-            this.router.navigate(['dashboard']);
+          localStorage.setItem('currentUserData', JSON.stringify(data.user));
+          this.router.navigate(['dashboard']);
         } else {
           this.errorMsg = data.message ? data.message : "Please try again";
         }
