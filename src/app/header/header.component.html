@@ -1,14 +1,15 @@
 <div class="blog-masthead">
   <div class="container">
     <nav class="blog-nav">
-      <a class="blog-nav-item active" href="#">Home</a>
+      <a class="blog-nav-item active" [routerLink]="['/dashboard']">Home</a>
       <a class="blog-nav-item" href="#">New features</a>
       <a class="blog-nav-item" href="#">Press</a>
       <a class="blog-nav-item" href="#">New hires</a>
-      <a class="blog-nav-item" href="#">About</a>
+      <a class="blog-nav-item" [routerLink]="['/about']">About</a>
       <a class="blog-nav-item" [routerLink]="['/register']" *ngIf = "!currentUserToken && currentURL == '/'">Register</a>
       <a class="blog-nav-item" [routerLink]="['/']" *ngIf = "!currentUserToken && currentURL == '/register'">Login</a>
       <a class="blog-nav-item" [routerLink]="['/user']" *ngIf = "currentUserToken">User</a>
+      <a class="blog-nav-item" [routerLink]="['/profile']" *ngIf = "currentUserToken">Profile</a>
       <a class="blog-nav-item" href="#" (click) = "logout()" *ngIf = "currentUserToken">Logout</a>
     </nav>
   </div>

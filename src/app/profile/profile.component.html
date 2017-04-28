@@ -1,0 +1,33 @@
+<router-outlet name="header"></router-outlet>
+<p>
+  profile works!
+</p>
+
+
+<div class="jumbotron">
+  <h2>Profile</h2>
+
+  <div class="alert alert-danger"  *ngIf="errorMsg">
+  {{errorMsg}}
+</div>
+  <form #form="ngForm" (ngSubmit)="submitForm(form.value)">
+    <div class="form-group">
+      <label>Full Name:</label>
+      <input type="text" class="form-control" placeholder="John Doe" name="name" [(ngModel)]="user.name" required>
+      {{user.name}}
+    </div>
+    <div class="form-group">
+      <label>Email:</label>
+      <input type="text" class="form-control" placeholder="John@example.com" name="email" [(ngModel)]="user.email" ngModel required>
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" class="form-control" placeholder="" name="password" [(ngModel)]="password" ngModel required>
+    </div>
+
+    <input type="file" class="form-control" name="documents" (change)="onChange($event)" [(ngModel)]="user.profile" #documents="ngModel">
+    <div class="form-group">
+      <button type="submit" class="btn btn-default">Submit</button>
+    </div>
+  </form>
+</div>

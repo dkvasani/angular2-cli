@@ -7,6 +7,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterComponent } from './register/register.component';
 import { HeaderComponent } from './header/header.component';
 import { UserComponent } from './user/user.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const headerComp = {
             path: '',
@@ -22,7 +23,8 @@ const appRoutes: Routes = [
     },
     {
         path: 'about',
-        component: AboutusComponent
+        component: AboutusComponent,
+        children: [headerComp]
     },
     {
         path: 'dashboard',
@@ -37,6 +39,11 @@ const appRoutes: Routes = [
     {
         path: 'user',
         component: UserComponent,
+        children: [headerComp]
+    },
+    {
+        path: 'profile',
+        component: ProfileComponent,
         children: [headerComp]
     },
 ];
