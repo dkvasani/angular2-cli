@@ -9,6 +9,7 @@ import { routing } from './app.routing';
 import { LoginComponent } from './login/login.component';
 import { LoginService } from "./login.service";
 import { UserService } from "./user.service";
+import { DataserviceService } from "./dataservice.service";
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterComponent } from './register/register.component';
@@ -33,7 +34,7 @@ import { UserComponent } from './user/user.component';
     HttpModule,
     routing
   ],
-  providers: [LoginService, UserService],
+  providers: [LoginService, UserService, DataserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

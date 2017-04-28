@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { LoginService } from "../login.service";
+import { DataserviceService } from "../dataservice.service";
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   errorMsg: String = '';
 
-  constructor(private loginService: LoginService, private router: Router) {
+  constructor(private loginService: LoginService,private dataService: DataserviceService, private router: Router) {
     var currentUserToken = localStorage.getItem('currentUserToken');
     if (currentUserToken) {
       this.router.navigate(['dashboard']);
@@ -28,6 +29,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('currentUserToken', logintToken);
           localStorage.setItem('currentUserData', JSON.stringify(data.user));
           this.router.navigate(['dashboard']);
+          this.dataService.currentUserToken = logintToken;
         } else {
           this.errorMsg = data.message ? data.message : "Please try again";
         }

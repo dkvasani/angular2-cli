@@ -9,20 +9,21 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-
-  constructor(private userService: UserService, private router: Router) { 
+  users: Array<any> = [];
+  errorMsg: string = '';
+  constructor(private userService: UserService, private router: Router) {
     userService.get().subscribe(
       data => {
         if (data.success) {
-          
+          console.log(data);
+          this.users = data.data;
         } else {
-          //this.errorMsg = data.message ? data.message : "Please try again";
+          this.errorMsg = data.message ? data.message : "Please try again";
         }
       },
       error => {
         var response = error._body;
         var obj = JSON.parse(response);
-        //this.errorMsg = obj.message ? obj.message : "Please try again";
       });
   }
 
