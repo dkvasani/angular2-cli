@@ -23,14 +23,16 @@
     "@angular/platform-browser-dynamic": "^4.1.0",
     "@angular/platform-server": "^4.1.0",
     "@angular/router": "^4.1.0",
+    "angular-cli": "^1.0.0-beta.28.3",
     "bootstrap": "^4.0.0-alpha.6",
     "core-js": "^2.4.1",
+    "mdbootstrap": "^4.3.2",
     "rxjs": "^5.1.0",
     "typescript": "^2.3.1",
     "zone.js": "^0.7.6"
   },
   "devDependencies": {
-    "@angular/cli": "1.0.0-beta.32.3",
+    "@angular/cli": "^1.0.3",
     "@angular/compiler-cli": "^2.4.0",
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
@@ -40,12 +42,23 @@
     "karma": "~1.4.1",
     "karma-chrome-launcher": "~2.0.0",
     "karma-cli": "~1.0.1",
+    "karma-coverage-istanbul-reporter": "^0.2.0",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "karma-coverage-istanbul-reporter": "^0.2.0",
     "protractor": "~5.1.0",
     "ts-node": "~2.0.0",
     "tslint": "~4.4.2",
     "typescript": "~2.0.0"
-  }
+  },
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-beta.32.3.",
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dkvasani/angular2-cli.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/dkvasani/angular2-cli/issues"
+  },
+  "homepage": "https://github.com/dkvasani/angular2-cli#readme"
 }

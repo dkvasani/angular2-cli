@@ -17,6 +17,14 @@ import { HeaderComponent } from './header/header.component';
 import { ProjectComponent } from './project/project.component';
 import { UserComponent } from './user/user.component';
 import { ProfileComponent } from './profile/profile.component';
+import { HomeComponent } from './home/home.component';
+import { LinkComponent } from './link/link.component';
+import { TextComponent } from './text/text.component';
+import { TagComponent } from './tag/tag.component';
+import { CategoryComponent } from './category/category.component';
+import { QuizComponent } from './quiz/quiz.component';
+import { ExamComponent } from './exam/exam.component';
+import { ResultComponent } from './result/result.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +36,15 @@ import { ProfileComponent } from './profile/profile.component';
     HeaderComponent,
     ProjectComponent,
     UserComponent,
-    ProfileComponent
+    ProfileComponent,
+    HomeComponent,
+    LinkComponent,
+    TextComponent,
+    TagComponent,
+    CategoryComponent,
+    QuizComponent,
+    ExamComponent,
+    ResultComponent
   ],
   imports: [
     BrowserModule,

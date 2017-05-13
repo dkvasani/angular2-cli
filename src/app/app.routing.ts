@@ -1,6 +1,7 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -18,6 +19,11 @@ const headerComp = {
 const appRoutes: Routes = [
     {
         path: '',
+        component: HomeComponent,
+        children: [headerComp]
+    },
+    {
+        path: 'login',
         component: LoginComponent,
         children: [headerComp]
     },
