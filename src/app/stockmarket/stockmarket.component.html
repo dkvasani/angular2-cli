@@ -1,0 +1,30 @@
+<router-outlet name="header"></router-outlet>
+
+<div class="jumbotron">
+  <h2>User List</h2>
+  <div class="row">
+    <table class="table">
+      <tr>
+        <th>Symbol </th>
+        <th>Date </th>
+        <th>Underlying Close Price (A) </th>
+        <th>Underlying Previous Day Close Price (B) </th>
+        <th>Underlying Log Returns (C) </th>
+        <th>Previous Day Underlying Volatility (D) </th>
+        <th>Current Day Underlying Daily Volatility (E) </th>
+        <th>Underlying Annualised Volatility (F) </th>
+
+      </tr>
+      <tr *ngFor="let stock of stockData">
+        <td><a>{{stock.symbol}}</a> </td>
+        <td>{{stock.date}} </td>
+        <td>{{stock.underlying_close_price_a}}</td>
+        <td>{{stock.underlying_previous_close_price_b}}</td>
+        <td>{{stock.underlying_log_returns_c}}</td>
+        <td>{{stock.previous_day_underlying_volatility_d}}</td>
+        <td>{{stock.current_day_underlying_daily_volatility_e}}</td>
+        <td>{{stock.underlying_annualised_volatility_f}}</td>
+        <td>Action</td>
+      </tr>
+    </table>
+  </div>

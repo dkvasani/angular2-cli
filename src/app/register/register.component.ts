@@ -14,8 +14,6 @@ export class RegisterComponent implements OnInit {
 
   errorMsg : String = '';
   submitForm(form: any): void {
-    console.log('Form Data: ');
-    console.log(form);
     this.loginService.register(form).subscribe(
       data => {
         if (data.success) {

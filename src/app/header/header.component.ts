@@ -16,7 +16,6 @@ export class HeaderComponent implements OnInit {
     this.currentUserToken = localStorage.getItem('currentUserToken');
     this.currentUserData = localStorage.getItem('currentUserData');
     this.currentURL = this.router.url;
-    console.log("Headedr compo");
     this.currentUserData = JSON.parse(this.currentUserData);
     dataService.setScope(this.currentUserToken);   
   }

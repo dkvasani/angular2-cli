@@ -20,6 +20,9 @@
             <a class="nav-link waves-effect waves-light" [routerLink]="['/dashboard']">Dashboard</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link waves-effect waves-light" [routerLink]="['/stockmarket']">Stock Market</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link waves-effect waves-light" [routerLink]="['/about']">Pricing</a>
           </li>
           <li class="nav-item">
@@ -44,11 +47,15 @@
           </li>
           <li class="nav-item btn-group dropdown">
             <a class="nav-link dropdown-toggle waves-effect waves-light" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false">Dropdown</a>
-            <div class="dropdown-menu dropdown-primary" aria-labelledby="dropdownMenu1">
-              <a class="dropdown-item waves-effect waves-light">Action</a>
-              <a class="dropdown-item waves-effect waves-light">Another action</a>
-              <a class="dropdown-item waves-effect waves-light">Something else here</a>
+              aria-expanded="false">Operation</a>
+            <div class="dropdown-menu dropdown-primary" aria-labelledby="dropdownMenu1" *ngIf="currentUserToken">
+              <a class="dropdown-item waves-effect waves-light" [routerLink]="['/category']"  *ngIf="currentUserToken">Category</a>
+              <a class="dropdown-item waves-effect waves-light" [routerLink]="['/tag']"  *ngIf="currentUserToken">Tag</a>
+              <a class="dropdown-item waves-effect waves-light" [routerLink]="['/link']"  *ngIf="currentUserToken">Link</a>
+              <a class="dropdown-item waves-effect waves-light" [routerLink]="['/text']"  *ngIf="currentUserToken">Text</a>
+              <a class="dropdown-item waves-effect waves-light" [routerLink]="['/quiz']"  *ngIf="currentUserToken">Quiz</a>
+              <a class="dropdown-item waves-effect waves-light" [routerLink]="['/exam']"  *ngIf="currentUserToken">Exam</a>
+              <a class="dropdown-item waves-effect waves-light" [routerLink]="['/result']"  *ngIf="currentUserToken">Result</a>
             </div>
           </li>
         </ul>

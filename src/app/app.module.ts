@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -9,7 +9,9 @@ import { routing } from './app.routing';
 import { LoginComponent } from './login/login.component';
 import { LoginService } from "./login.service";
 import { UserService } from "./user.service";
+import { CommonService } from "./common.service";
 import { DataserviceService } from "./dataservice.service";
+import { StockmarketService } from "./stockmarket.service";
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterComponent } from './register/register.component';
@@ -25,6 +27,7 @@ import { CategoryComponent } from './category/category.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { ExamComponent } from './exam/exam.component';
 import { ResultComponent } from './result/result.component';
+import { StockmarketComponent } from './stockmarket/stockmarket.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +47,8 @@ import { ResultComponent } from './result/result.component';
     CategoryComponent,
     QuizComponent,
     ExamComponent,
-    ResultComponent
+    ResultComponent,
+    StockmarketComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +56,7 @@ import { ResultComponent } from './result/result.component';
     HttpModule,
     routing
   ],
-  providers: [LoginService, UserService, DataserviceService],
+  providers: [Title, LoginService, UserService, DataserviceService, CommonService, StockmarketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
