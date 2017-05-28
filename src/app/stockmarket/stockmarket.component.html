@@ -2,6 +2,17 @@
 
 <div class="jumbotron">
   <h2>User List</h2>
+<h3 class="first">Basic</h3>
+<h3>Type share name</h3>
+<p-autoComplete [(ngModel)]="brand" [suggestions]="filteredBrands" (completeMethod)="filterBrands($event)" [size]="30"
+    [minLength]="1" placeholder="Hint: type 'v' or 'f'" [dropdown]="true" (onDropdownClick)="handleDropdownClick($event)">
+    <ng-template let-brand pTemplate="item">
+        <div class="ui-helper-clearfix" style="border-bottom:1px solid #D5D5D5">          
+            <div style="font-size:18px;float:right;margin:10px 10px 0 0">{{brand}}</div>
+        </div>
+    </ng-template>
+</p-autoComplete>
+<span style="margin-left:50px">Share name: {{brand||'none'}}</span>
   <div class="row">
     <table class="table">
       <tr>
@@ -28,3 +39,7 @@
       </tr>
     </table>
   </div>
+
+  <script type="text/javascript">
+$('select').select2();
+</script>

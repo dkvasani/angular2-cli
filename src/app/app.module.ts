@@ -28,6 +28,10 @@ import { QuizComponent } from './quiz/quiz.component';
 import { ExamComponent } from './exam/exam.component';
 import { ResultComponent } from './result/result.component';
 import { StockmarketComponent } from './stockmarket/stockmarket.component';
+import { NguiAutoCompleteModule } from '@ngui/auto-complete';
+import {AutoCompleteModule} from 'primeng/primeng';
+
+
 
 @NgModule({
   declarations: [
@@ -48,13 +52,14 @@ import { StockmarketComponent } from './stockmarket/stockmarket.component';
     QuizComponent,
     ExamComponent,
     ResultComponent,
-    StockmarketComponent
+    StockmarketComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    routing
+    routing,
+    AutoCompleteModule
   ],
   providers: [Title, LoginService, UserService, DataserviceService, CommonService, StockmarketService],
   bootstrap: [AppComponent]

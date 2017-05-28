@@ -13,7 +13,15 @@ export class StockmarketService {
 
   get(): Observable<any> {
     return this.http
-      .get(this.dataService.stockserverAPI + 'listnse')
+      .get(this.dataService.stockserverAPI + 'users/listnse')
+      .map(response => response.json()).catch(err => {
+        return Observable.throw(err);
+      });
+  }
+
+  getDistinctNSE(): Observable<any> {
+    return this.http
+      .get(this.dataService.stockserverAPI + 'nse/list')
       .map(response => response.json()).catch(err => {
         return Observable.throw(err);
       });

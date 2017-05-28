@@ -9,7 +9,7 @@ export class DataserviceService {
   currentURL : string = '';
   currentUserData : any ;
   serverAPI :string = 'http://localhost:1337/';
-  stockserverAPI :string = 'http://localhost:3000/users/';
+  stockserverAPI :string = 'http://localhost:3000/';
   constructor() {
     this.currentUserToken = localStorage.getItem('currentUserToken');
     this.currentUserData = localStorage.getItem('currentUserData');
